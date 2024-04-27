@@ -25,8 +25,6 @@ import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.example.boldtest.utils.Constants.FORECAST_CONDITION_IMAGE_TEXT
 import com.example.boldtest.ui.theme.smoothWhite
-import com.example.boldtest.utils.Constants
-import com.example.boldtest.utils.Constants.WEATHER_CARD_VIEW_TAG
 
 
 @OptIn(ExperimentalGlideComposeApi::class)

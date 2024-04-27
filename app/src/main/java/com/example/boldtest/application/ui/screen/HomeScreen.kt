@@ -27,7 +27,6 @@ import com.example.boldtest.application.ui.viewmodel.states.ForecastInformation
 import com.example.boldtest.utils.widgets.AutocompleteDropDownMenu
 import com.example.boldtest.utils.widgets.WeatherCardView
 import com.example.boldtest.R
-import com.example.boldtest.utils.Constants
 import com.example.boldtest.utils.Constants.HOME_SCREEN
 import com.example.boldtest.utils.Constants.WEATHER_CARD_VIEW_TAG
 

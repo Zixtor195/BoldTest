@@ -1,19 +1,11 @@
 package com.example.boldtest
 
 import androidx.activity.compose.setContent
-import androidx.compose.ui.test.SemanticsMatcher
 import androidx.compose.ui.test.assert
-import androidx.compose.ui.test.assertAll
-import androidx.compose.ui.test.assertAny
-import androidx.compose.ui.test.assertHeightIsAtLeast
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsFocused
-import androidx.compose.ui.test.assertIsOn
-import androidx.compose.ui.test.hasAnySibling
 import androidx.compose.ui.test.hasText
-import androidx.compose.ui.test.isDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.compose.ui.test.onChildren
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
