@@ -16,19 +16,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
-import com.example.boldtest.utils.Constants.FORECAST_CONDITION_IMAGE
+import com.example.boldtest.utils.Constants.FORECAST_CONDITION_IMAGE_TEXT
 import com.example.boldtest.ui.theme.smoothWhite
+import com.example.boldtest.utils.Constants
+import com.example.boldtest.utils.Constants.WEATHER_CARD_VIEW_TAG
 
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun WeatherCardView(
+    tag: String,
     date: String,
     averageTemperature: String,
     conditionText: String,
@@ -44,13 +48,16 @@ fun WeatherCardView(
             disabledContentColor = smoothWhite,
         ),
         modifier = Modifier
+            .testTag(tag)
             .fillMaxWidth()
             .height(150.dp)
             .padding(10.dp)
     ) {
-        Row(modifier = Modifier
-            .background(color = smoothWhite)
-            .fillMaxSize()) {
+        Row(
+            modifier = Modifier
+                .background(color = smoothWhite)
+                .fillMaxSize()
+        ) {
             Column(modifier = Modifier.weight(1f)) {
 
                 Text(
@@ -76,22 +83,22 @@ fun WeatherCardView(
 
             }
             Column(modifier = Modifier.weight(1f)) {
-            GlideImage(
-                model = conditionIcon,
-                contentDescription = FORECAST_CONDITION_IMAGE,
-                modifier = Modifier
-                    .padding(2.dp)
-                    .size(80.dp)
-                    .align(Alignment.CenterHorizontally),
-            )
+                GlideImage(
+                    model = conditionIcon,
+                    contentDescription = FORECAST_CONDITION_IMAGE_TEXT,
+                    modifier = Modifier
+                        .padding(2.dp)
+                        .size(80.dp)
+                        .align(Alignment.CenterHorizontally),
+                )
 
-            Text(
-                text = conditionText,
-                modifier = Modifier.align(Alignment.CenterHorizontally),
-                fontWeight = FontWeight.SemiBold,
-                color = Color.Black
-            )
-        }
+                Text(
+                    text = conditionText,
+                    modifier = Modifier.align(Alignment.CenterHorizontally),
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color.Black
+                )
+            }
         }
     }
 

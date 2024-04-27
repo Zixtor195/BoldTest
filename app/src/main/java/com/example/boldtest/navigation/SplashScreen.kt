@@ -13,6 +13,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.boldtest.R
+import com.example.boldtest.utils.Constants.SPLASH_SCREEN_IMAGE_TAG
 import kotlinx.coroutines.delay
 
 @Composable
@@ -33,7 +34,7 @@ fun SplashScreen(navController: NavHostController) {
         Image(
             modifier = Modifier.size(150.dp),
             painter = painterResource(id = R.drawable.splash_icon),
-            contentDescription = ""
+            contentDescription = SPLASH_SCREEN_IMAGE_TAG
         )
 
     }

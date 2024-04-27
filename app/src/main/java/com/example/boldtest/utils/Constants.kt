@@ -21,7 +21,11 @@ object Constants {
     const val SPLASH_SCREEN = "splash_screen"
 
     //General
-    const val FORECAST_CONDITION_IMAGE = "forecastConditionImage"
+    const val WEATHER_CARD_VIEW_TAG= "weatherCardViewTag"
+    const val AUTO_COMPLETE_DROPDOWN_MENU_TAG = "autocompleteDropDownMenuTag"
+    const val AUTO_COMPLETE_CARD_TAG= "autocompleteCardTag"
+    const val SPLASH_SCREEN_IMAGE_TAG = "splashScreenImageTextTag"
+    const val FORECAST_CONDITION_IMAGE_TEXT = "forecastConditionImageTag"
     const val EMPTY_STRING = ""
     const val FORECAST_DAYS = 3
 

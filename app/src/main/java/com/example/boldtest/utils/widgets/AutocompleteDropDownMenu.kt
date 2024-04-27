@@ -18,11 +18,14 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.boldtest.utils.Constants.AUTO_COMPLETE_CARD_TAG
+import com.example.boldtest.utils.Constants.AUTO_COMPLETE_DROPDOWN_MENU_TAG
 
 
 @Composable
@@ -46,6 +49,7 @@ fun AutocompleteDropDownMenu(
                 TextField(
                     modifier = Modifier
                         .fillMaxWidth()
+                        .testTag(AUTO_COMPLETE_DROPDOWN_MENU_TAG)
 
                         .border(
                             width = 1.8.dp,
@@ -84,13 +88,12 @@ fun AutocompleteDropDownMenu(
             AnimatedVisibility(visible = isExpanded) {
                 Card(
                     modifier = Modifier
-                        .padding(horizontal = 5.dp),
+                        .padding(horizontal = 5.dp)
+                        .testTag(AUTO_COMPLETE_CARD_TAG),
                     shape = RoundedCornerShape(10.dp)
                 ) {
 
-                    LazyColumn(
-                        modifier = Modifier.heightIn(max = 150.dp),
-                    ) {
+                    LazyColumn(modifier = Modifier.heightIn(max = 150.dp)) {
                         items(itemList.size) {
                             ItemsCategory(title = itemList[it]) { item ->
                                 onClickItem(item)

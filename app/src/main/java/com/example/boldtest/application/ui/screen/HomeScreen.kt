@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -26,6 +27,9 @@ import com.example.boldtest.application.ui.viewmodel.states.ForecastInformation
 import com.example.boldtest.utils.widgets.AutocompleteDropDownMenu
 import com.example.boldtest.utils.widgets.WeatherCardView
 import com.example.boldtest.R
+import com.example.boldtest.utils.Constants
+import com.example.boldtest.utils.Constants.HOME_SCREEN
+import com.example.boldtest.utils.Constants.WEATHER_CARD_VIEW_TAG
 
 @Composable
 fun HomeScreen(navController: NavHostController, homeScreenViewModel: HomeScreenViewModel) {
@@ -36,11 +40,13 @@ fun HomeScreen(navController: NavHostController, homeScreenViewModel: HomeScreen
 
 
     Column(
-        modifier = Modifier.paint(
-            painterResource(id = R.drawable.home_background),
-            colorFilter = ColorFilter.tint(Color.White, blendMode = BlendMode.Color),
-            contentScale = ContentScale.FillBounds
-        )
+        modifier = Modifier
+            .testTag(HOME_SCREEN)
+            .paint(
+                painterResource(id = R.drawable.home_background),
+                colorFilter = ColorFilter.tint(Color.White, blendMode = BlendMode.Color),
+                contentScale = ContentScale.FillBounds
+            )
     ) {
         Column(
             modifier = Modifier.padding(20.dp)
@@ -77,13 +83,11 @@ fun HomeScreen(navController: NavHostController, homeScreenViewModel: HomeScreen
 
         }
 
-        LazyColumn(
-            modifier = Modifier,
-            contentPadding = PaddingValues(10.dp),
-        ) {
+        LazyColumn(contentPadding = PaddingValues(10.dp)) {
             items(forecastInformation.forecastDayList.size) {
                 forecastInformation.forecastDayList[it].let { forecastDay ->
                     WeatherCardView(
+                        tag = "$WEATHER_CARD_VIEW_TAG $it",
                         date = forecastDay.date,
                         conditionText = forecastDay.conditionText,
                         conditionIcon = forecastDay.conditionIcon,

@@ -70,6 +70,7 @@ dependencies {
     implementation(libs.com.github.bumptech.glide)
 
     //Compose
+    implementation(libs.androidx.activity.compose.navigation)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
